@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState, useEffect, useRef } from 'react';
 
 // Custom Icons for Features section
 const CustomIcons = {
@@ -166,14 +166,70 @@ const Step: FC<{ num: string, title: string, children: ReactNode }> = ({ num, ti
     </div>
 );
 
+const CustomCursor: FC = () => {
+  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const visibleFired = useRef(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!visibleFired.current) {
+        visibleFired.current = true;
+        setIsVisible(true);
+      }
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    const onMouseEnter = () => setIsHovering(true);
+    const onMouseLeave = () => setIsHovering(false);
+    
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Using a timeout to ensure all interactive elements are in the DOM before adding listeners
+    const timer = setTimeout(() => {
+        const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', onMouseEnter);
+          el.addEventListener('mouseleave', onMouseLeave);
+        });
+    }, 100);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
+      interactiveElements.forEach(el => {
+          el.removeEventListener('mouseenter', onMouseEnter);
+          el.removeEventListener('mouseleave', onMouseLeave);
+      });
+      clearTimeout(timer);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once.
+
+  return (
+    <div
+      className={`custom-cursor ${isHovering ? 'is-hovering' : ''}`}
+      style={{ 
+        left: `${position.x}px`, 
+        top: `${position.y}px`,
+        opacity: isVisible ? 1 : 0, 
+      }}
+    >
+      <div className="cursor-ring"></div>
+      <div className="cursor-dot"></div>
+    </div>
+  );
+};
+
 const LandingPage: FC = () => {
   return (
     <>
+      <CustomCursor />
       {/* Background Layer */}
       <div className="fixed inset-0 z-[-1]">
         <div className="absolute inset-0 bg-white"></div>
         {/* Animated Feature Vignettes */}
-        <div className="absolute inset-0 opacity-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-30 overflow-hidden">
           <AnimatedLeaderboard className="top-[10%] left-[5%]" style={{ animationDelay: '0s' }} />
           <AnimatedChallengeCreation className="top-[15%] right-[8%]" challengeText="Workout 3x a week" steps={20} style={{ animationDelay: '1s' }} />
           <AnimatedFriendSearch className="top-[40%] left-[15%]" style={{ animationDelay: '0.5s' }} />
