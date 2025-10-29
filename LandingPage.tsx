@@ -380,7 +380,7 @@ const LandingPage: FC = () => {
                   <p className="text-lg md:text-xl font-bold text-fleng-muted mb-8">
                     The app that makes building habits hilarious (and actually happens!)
                   </p>
-                  <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer" className="inline-block bg-fleng-pink text-white font-bold py-3 px-10 rounded-full text-lg border-4 border-fleng-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:-translate-y-1 hover:-translate-x-1">
+                  <a href="https://flengg.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-block bg-fleng-pink text-white font-bold py-3 px-10 rounded-full text-lg border-4 border-fleng-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:-translate-y-1 hover:-translate-x-1">
                       Join the Fun!
                   </a>
                   {/* Speech bubble tail */}
@@ -711,7 +711,7 @@ const LandingPage: FC = () => {
         <section className="bg-fleng-blue text-center py-20 px-4 mt-10 border-y-4 border-fleng-dark animate-pop-in opacity-0" style={{animationDelay: '500ms'}}>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{textShadow: '3px 3px 0px #1E1E1E'}}>Ready to stop procrastinating?</h2>
           <p className="text-xl text-white/90 font-bold max-w-2xl mx-auto mb-8">Download Fleng today and turn your goals into a game. Your future self will thank you (probably).</p>
-          <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer" className="bg-white text-fleng-pink font-bold py-3 px-10 rounded-full text-xl border-4 border-fleng-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:scale-105 hover:-translate-y-1 hover:-translate-x-1 transform inline-block">
+          <a href="https://flengg.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-white text-fleng-pink font-bold py-3 px-10 rounded-full text-xl border-4 border-fleng-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:scale-105 hover:-translate-y-1 hover:-translate-x-1 transform inline-block">
               Let's Do This!
           </a>
         </section>
