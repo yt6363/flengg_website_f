@@ -36,6 +36,9 @@
     }
   </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Baloo 2', cursive;
       cursor: none;
@@ -150,7 +153,16 @@
       background-color: #F64291;
       transform: translate(-50%, -50%) scale(1.5);
     }
-    
+
+    /* Hide scrollbar for horizontal scroll */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
   </style>
 </head>
 <body class="text-fleng-dark">
