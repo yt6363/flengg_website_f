@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleng - Challenge Your Friends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fleng-pink': '#F64291',
+            'fleng-blue': '#2FBDFD',
+            'fleng-green': '#28C76F',
+            'fleng-red': '#F24E4E',
+            'fleng-bg': '#F7F7F8',
+            'fleng-dark': '#1E1E1E',
+            'fleng-muted': '#777777',
+          },
+          fontFamily: {
+            sans: ['Baloo 2', 'cursive'],
+          },
+          borderRadius: {
+            '4xl': '2rem', // 32px
+          },
+          boxShadow: {
+            'cartoon': '5px 5px 0px #1E1E1E',
+            'cartoon-hover': '8px 8px 0px #1E1E1E',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Baloo 2', cursive;
+    }
+    a, button, [role="button"] {
+        cursor: pointer !important;
+    }
+    .animate-pop-in { animation: pop-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    
+    @keyframes pop-in {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-white text-fleng-dark" style="background-image: radial-gradient(rgba(30, 30, 30, 0.07) 1px, transparent 1px); background-size: 24px 24px;">
+  <div id="root"></div>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    }
+  }
+  </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
