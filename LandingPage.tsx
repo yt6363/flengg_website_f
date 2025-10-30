@@ -135,7 +135,7 @@ const AnimatedChallengeInvite: FC<{ className?: string; style?: React.CSSPropert
 
 // Character Illustrations
 const Character1: FC = () => (
-  <div className="relative w-32 h-40 md:w-40 md:h-48">
+  <div className="relative w-20 h-28 sm:w-32 sm:h-40 md:w-40 md:h-48 flex-shrink-0">
     <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Body */}
       <ellipse cx="60" cy="110" rx="30" ry="35" fill="#FFD93D" stroke="#1E1E1E" strokeWidth="3"/>
@@ -163,7 +163,7 @@ const Character1: FC = () => (
 );
 
 const Character2: FC = () => (
-  <div className="relative w-32 h-40 md:w-40 md:h-48">
+  <div className="relative w-20 h-28 sm:w-32 sm:h-40 md:w-40 md:h-48 flex-shrink-0">
     <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Body */}
       <ellipse cx="60" cy="110" rx="30" ry="35" fill="#F64291" stroke="#1E1E1E" strokeWidth="3"/>
@@ -193,7 +193,7 @@ const Character2: FC = () => (
 );
 
 const Character3: FC = () => (
-  <div className="relative w-32 h-40 md:w-40 md:h-48">
+  <div className="relative w-20 h-28 sm:w-32 sm:h-40 md:w-40 md:h-48 flex-shrink-0">
     <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Body */}
       <ellipse cx="60" cy="110" rx="30" ry="35" fill="#2FBDFD" stroke="#1E1E1E" strokeWidth="3"/>
@@ -226,7 +226,7 @@ const Character3: FC = () => (
 );
 
 const Character4: FC = () => (
-  <div className="relative w-32 h-40 md:w-40 md:h-48">
+  <div className="relative w-20 h-28 sm:w-32 sm:h-40 md:w-40 md:h-48 flex-shrink-0">
     <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Body */}
       <ellipse cx="60" cy="115" rx="30" ry="35" fill="#FFD93D" stroke="#1E1E1E" strokeWidth="3"/>
@@ -373,14 +373,14 @@ const LandingPage: FC = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Side - Text */}
               <div className="text-left animate-pop-in" style={{ opacity: 0 }}>
-                <div className="bg-white border-4 border-Flengg-dark rounded-4xl p-8 md:p-10 shadow-cartoon relative">
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-Flengg-dark leading-tight mb-6">
+                <div className="bg-white border-4 border-Flengg-dark rounded-4xl p-6 md:p-10 shadow-cartoon relative">
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-Flengg-dark leading-tight mb-4 md:mb-6">
                     Flengg: Where Fun, Friends, and Frazzled Faces Collide!
                   </h1>
-                  <p className="text-lg md:text-xl font-bold text-Flengg-muted mb-8">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-Flengg-muted mb-6 md:mb-8">
                     The app that makes building habits hilarious (and actually happens!)
                   </p>
-                  <a href="https://Flengg.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-block bg-Flengg-pink text-white font-bold py-3 px-10 rounded-full text-lg border-4 border-Flengg-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:-translate-y-1 hover:-translate-x-1">
+                  <a href="https://Flengg.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-block bg-Flengg-pink text-white font-bold py-3 px-8 md:px-10 rounded-full text-base md:text-lg border-4 border-Flengg-dark transition-all duration-200 shadow-cartoon hover:shadow-cartoon-hover hover:-translate-y-1 hover:-translate-x-1">
                       Join the Fun!
                   </a>
                   {/* Speech bubble tail */}
@@ -390,7 +390,7 @@ const LandingPage: FC = () => {
               </div>
 
               {/* Right Side - Characters */}
-              <div className="flex justify-center items-end gap-4 animate-pop-in" style={{ animationDelay: '200ms', opacity: 0 }}>
+              <div className="flex justify-center items-end gap-2 sm:gap-4 animate-pop-in overflow-x-auto" style={{ animationDelay: '200ms', opacity: 0 }}>
                 <Character1 />
                 <Character2 />
                 <Character3 />
@@ -719,25 +719,6 @@ const LandingPage: FC = () => {
         {/* Footer */}
         <footer className="bg-transparent text-center py-12 px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Profile Circle */}
-            <div className="flex justify-center mb-6">
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-Flengg-pink via-Flengg-blue to-Flengg-green rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-Flengg-dark shadow-cartoon hover:shadow-cartoon-hover transition-all duration-200 hover:-translate-y-1 hover:-translate-x-1 bg-gradient-to-br from-purple-500 to-indigo-600">
-                  <img
-                    src="/assets/profile.jpg"
-                    alt="Yashwanth Sai Tatineni"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/assets/profile.svg';
-                      target.onerror = null;
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
             <div className="mb-6">
               <h3 className="text-xl font-extrabold text-Flengg-dark">Yashwanth Sai Tatineni</h3>
               <p className="text-Flengg-muted font-bold">Creator of Flengg</p>
