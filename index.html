@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fleng - Challenge Your Friends</title>
+  <title>Flengg - Challenge Your Friends</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +13,13 @@
       theme: {
         extend: {
           colors: {
-            'fleng-pink': '#F64291',
-            'fleng-blue': '#2FBDFD',
-            'fleng-green': '#28C76F',
-            'fleng-red': '#F24E4E',
-            'fleng-bg': '#F7F7F8',
-            'fleng-dark': '#1E1E1E',
-            'fleng-muted': '#777777',
+            'Flengg-pink': '#F64291',
+            'Flengg-blue': '#2FBDFD',
+            'Flengg-green': '#28C76F',
+            'Flengg-red': '#F24E4E',
+            'Flengg-bg': '#F7F7F8',
+            'Flengg-dark': '#1E1E1E',
+            'Flengg-muted': '#777777',
           },
           fontFamily: {
             sans: ['Baloo 2', 'cursive'],
@@ -163,9 +163,86 @@
       scrollbar-width: none;
     }
 
+    /* Mobile Responsive Styles */
+    @media (max-width: 640px) {
+      /* Reduce heading sizes on mobile */
+      h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+      }
+
+      /* Adjust padding and margins */
+      section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      /* Make buttons more touch-friendly */
+      button, a[role="button"] {
+        min-height: 48px;
+        padding: 0.75rem 1.5rem;
+      }
+
+      /* Reduce shadow effects for better mobile performance */
+      .shadow-cartoon {
+        box-shadow: 3px 3px 0px #1E1E1E;
+      }
+
+      .shadow-cartoon-hover:hover {
+        box-shadow: 5px 5px 0px #1E1E1E;
+      }
+
+      /* Hide or simplify animated shapes on mobile */
+      .animated-shape {
+        display: none;
+      }
+
+      /* Adjust profile circle size */
+      .w-24.h-24 {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      /* Stack footer content better on mobile */
+      footer .flex-wrap {
+        gap: 1rem !important;
+      }
+
+      /* Adjust text sizes */
+      .text-4xl {
+        font-size: 1.875rem;
+      }
+
+      .text-5xl {
+        font-size: 2.25rem;
+      }
+
+      /* Better spacing for mobile */
+      .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Tablet adjustments */
+      .md\:text-5xl {
+        font-size: 2.5rem;
+      }
+
+      .md\:p-8 {
+        padding: 1.5rem;
+      }
+    }
+
   </style>
 </head>
-<body class="text-fleng-dark">
+<body class="text-Flengg-dark">
   <div id="root"></div>
   <script type="importmap">
   {
